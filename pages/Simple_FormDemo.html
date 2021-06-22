@@ -14,13 +14,14 @@
     <header class="headerContainer"><h1>HTML 5 Input Fields</h1></header>
     <div>
         <label for="text">Text Input Type For Name:</label>
-        <input type="text" id="text" name="text">
+        <input type="text" id="text" name="text" placeholder="Enter Your Name">
         <error-output class="text-error" for="text"></error-output>
          
     </div>
     <div> 
         <label for="pwd">Password Input Type:</label>
-        <input type="password" id="pwd" name="pwd" required>
+        <input type="password" id="pwd" name="pwd" required placeholder="Atleast 1 UC,1 LC,1 Sp.Ch.(Min. 8 Digit)">
+        <error-output class="password-error" for="pwd"></error-output>
     </div>
     <div>
         <label for="email"> Email Input Type:</label>
@@ -88,6 +89,15 @@
             if(numberRegex.test(number.value))
             numberError.textContent = "";
             else numberError.textContent = "Number is Incorrect";
+        });
+
+        const password = document.querySelector('#pwd');
+        const pwdError = document.querySelector('.password-error');
+        pwd.addEventListener('input', function() {
+            let pwdRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@!#]*)[a-zA-Z0-9@!#*]{8,}$');
+            if(pwdRegex.test(password.value))
+            pwdError.textContent = "";
+            else pwdError.textContent = "Invalid Password";
         });
 
         const salary = document.querySelector('#salary');
