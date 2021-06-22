@@ -76,10 +76,19 @@
         const emailError = document.querySelector('.email-error');
         email.addEventListener('input', function() {
             let emailRegex = RegExp('^[a-z]{3}[.][xyz]*[@][a-z]{2}[.][co]{2}[.][in]*$');
-            if(emailRegex.test(Text.value))
+            if(emailRegex.test(email.value))
             emailError.textContent= '';
             else emailError.textContent = "email is incorrect";
         });
+
+        // const number = document.querySelector('#number');
+        // const numberError = document.querySelector('.number-error');
+        // number.addEventListener('input', function() {
+        //     let numberRegex = RegExp('^[1-9]{4}$');
+        //     if(numberRegex.test(number.value))
+        //     numberError.textContent = "";
+        //     else numberError.textContent = "Name is Incorrect";
+        // });
 
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
