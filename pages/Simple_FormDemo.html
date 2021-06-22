@@ -33,7 +33,7 @@
     </div>
     <div>
         <label for="number">Number Input Type</label>
-        <input type="number" id="number" name="number">
+        <input type="tel" id="number" name="number">
         <error-output class="number-error" for="number"></error-output>
     </div>
     <div>
@@ -78,17 +78,17 @@
             let emailRegex = RegExp('^[a-z]{3}[.][xyz]*[@][a-z]{2}[.][co]{2}[.][in]*$');
             if(emailRegex.test(email.value))
             emailError.textContent= '';
-            else emailError.textContent = "email is incorrect";
+            else emailError.textContent = "Email is incorrect";
         });
 
-        // const number = document.querySelector('#number');
-        // const numberError = document.querySelector('.number-error');
-        // number.addEventListener('input', function() {
-        //     let numberRegex = RegExp('^[1-9]{4}$');
-        //     if(numberRegex.test(number.value))
-        //     numberError.textContent = "";
-        //     else numberError.textContent = "Name is Incorrect";
-        // });
+        const number = document.querySelector('#number');
+        const numberError = document.querySelector('.number-error');
+        number.addEventListener('input', function() {
+            let numberRegex = RegExp('^[1-9]{2}[ ][1-9]{1}[0-9]{9}$');
+            if(numberRegex.test(number.value))
+            numberError.textContent = "";
+            else numberError.textContent = "Number is Incorrect";
+        });
 
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
